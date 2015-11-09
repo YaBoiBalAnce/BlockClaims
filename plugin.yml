@@ -1,0 +1,6 @@
+name: BlockClaims
+description: Adds a block claiming system to Pocketmine!
+author: BalAnce
+version: 0.3
+main: blockclaims\main
+api: 1.12.0
