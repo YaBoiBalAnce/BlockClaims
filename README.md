@@ -14,8 +14,8 @@ STATUS: Working
 |Commands for Admins| Permission | Description |
 | ------------- | ------------- | ------------- |
 | /claim resetclaims [player] | blockclaims.resetclaims.other | resets player who executed command claims |
-|  | blockclaims.override | break/place blocks in claimed areas |
-|  | blockclaims.overclaim | bypasses claim limit |
+| NoCommand | blockclaims.override | break/place blocks in claimed areas |
+| NoCommand | blockclaims.overclaim | bypasses claim limit |
 
 How to use:
 - Place ClaimBlock(default: spongeblock) it will claim area (size specified in config) ClaimBlock is center
