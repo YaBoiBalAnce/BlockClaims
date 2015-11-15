@@ -58,7 +58,8 @@ class main extends PluginBase implements Listener{
 								if (!($claim = $this->inClaim(new Position($sender->getX(), $sender->getY(),$sender->getZ(),$sender->getLevel()), $sender)) == false){
 									if ($claim['owner'] === $sender->getName()){
 										if (isset($args[1])){
-											$this->addBuilder($claim, $args[1]);
+											if ($sender->hasPermission("blockclaims.addbuilder")){
+											$this->addBuilder($claim, $args[1]);}
 										}else{
 											$sender->sendMessage("Usage: /claim addbuilder [playername]");
 										}
@@ -73,7 +74,9 @@ class main extends PluginBase implements Listener{
 								if (!($claim = $this->inClaim(new Position($sender->getX(), $sender->getY(),$sender->getZ(),$sender->getLevel()), $sender)) == false){
 									if ($claim['owner'] === $sender->getName()){
 										if (isset($args[1])){
+											if ($sender->hasPermission("blockclaims.removebuilder")){
 											$this->removeBuilder($claim, $args[1], $sender);
+											}
 										}else{
 											$sender->sendMessage("Usage: /claim removebuilder [buildername]");
 										}
@@ -87,7 +90,8 @@ class main extends PluginBase implements Listener{
 							case "listbuilders":
 								if (!($claim = $this->inClaim(new Position($sender->getX(), $sender->getY(),$sender->getZ(),$sender->getLevel()), $sender)) == false){
 									if ($claim['owner'] === $sender->getName()){
-										$this->listBuilders($claim, $sender);
+										if ($sender->hasPermission("blockclaims.listbuilder")){
+										$this->listBuilders($claim, $sender);}
 									}else{
 										$sender->sendMessage(TextFormat::RED."You must be standing in a claim made by you! This claim is made by ".$claim['owner']);
 									}
