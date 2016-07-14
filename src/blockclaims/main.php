@@ -21,6 +21,7 @@ class main extends PluginBase implements Listener{
 	private $claims;
 	private $players;
 	public function onEnable(){
+		@mkdir($this->getDataFolder());
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 		$this->players = new Config($this->getDataFolder()."players.yml",Config::YAML,array("Players" => array()));
 		$this->players->save();
